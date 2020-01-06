@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "br.com.bozelli.currencyconverter"
+        minSdkVersion 15
+        targetSdkVersion 29
+        vectorDrawables.useSupportLibrary = true
+        versionCode 1
+        versionName "1.0"
+    }
+
+    bundle {
+        abi {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        language {
+            enableSplit = false
+        }
+    }
+
+    buildTypes {
+        debug {
+            crunchPngs true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            crunchPngs false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    splits {
+        abi {
+            enable true
+            universalApk true
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+        density {
+            enable true
+            reset()
+            include 'mdpi', 'hdpi', 'xhdpi', 'xxhdpi', 'xxxhdpi'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    annotationProcessor 'com.dslplatform:dsl-json-java8:1.9.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.dslplatform:dsl-json-java8:1.9.3'
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'com.squareup.okhttp3:okhttp:4.3.0'
+    kapt 'com.dslplatform:dsl-json-java8:1.9.3'
+}

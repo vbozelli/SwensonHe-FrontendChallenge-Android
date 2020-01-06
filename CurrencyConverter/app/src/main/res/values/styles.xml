@@ -1,0 +1,29 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:itemBackground">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.Dialog</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.FilledBox</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.Dialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:titleTextStyle">@style/AppTheme.Dialog.Title.Text</item>
+        <item name="buttonBarButtonStyle">@style/AppTheme.Dialog.Button</item>
+    </style>
+    <style name="AppTheme.Dialog.Title.Text" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AppTheme.Dialog.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="rippleColor">@color/colorAccent</item>
+    </style>
+</resources>

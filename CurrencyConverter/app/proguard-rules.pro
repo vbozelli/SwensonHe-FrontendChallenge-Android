@@ -1,0 +1,7 @@
+-dontwarn com.dslplatform.json.**
+-dontwarn dsl_json.java.sql.**
+-keepattributes *Annotation*
+-keep class dsl_json.** { *; }
+-keep @com.dslplatform.json.CompiledJson class *
+-keep @com.dslplatform.json.JsonConverter class *
+-keep class * implements com.dslplatform.json.Configuration

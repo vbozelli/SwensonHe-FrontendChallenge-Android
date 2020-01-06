@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <string name="attention">Attention</string>
+    <string name="eur">EUR</string>
+    <string name="converter">Converter</string>
+    <string name="loading_currencies_rates">Loading currencies rates… Please wait…</string>
+    <string name="not_connected_internet">You aren\'t connected to the Internet! Please connect to the Internet!</string>
+    <string name="one">1.00</string>
+</resources>
